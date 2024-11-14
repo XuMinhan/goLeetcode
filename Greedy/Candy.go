@@ -1,23 +1,26 @@
 package main
 
 func candy(ratings []int) (ans int) {
-	n := len(ratings)
-	left := make([]int, n)
-	for i, r := range ratings {
-		if i > 0 && r > ratings[i-1] {
-			left[i] = left[i-1] + 1
-		} else {
-			left[i] = 1
+	candies := make([]int, len(ratings))
+	for i, rating := range ratings {
+		if i == 0 {
+			continue
+		}
+		if rating > ratings[i-1] {
+			candies[i] = candies[i-1] + 1
 		}
 	}
-	right := 0
-	for i := n - 1; i >= 0; i-- {
-		if i < n-1 && ratings[i] > ratings[i+1] {
-			right++
-		} else {
-			right = 1
+	for i := len(ratings) - 2; i >= 0; i-- {
+		if ratings[i] > ratings[i+1] {
+			if candies[i+1]+1 > candies[i] {
+				candies[i] = candies[i+1] + 1
+			}
 		}
-		ans += max(left[i], right)
 	}
-	return
+	ret := 0
+	for _, i := range candies {
+		ret += i
+	}
+	return ret + len(candies)
+
 }

@@ -8,23 +8,25 @@ Input: nums = [2,3,1]
 Output: 2
 */
 func jump(nums []int) int {
-	length := len(nums)
-	end := 0
-	maxPosition := 0
-	steps := 0
-	for i := 0; i < length-1; i++ {
-		maxPosition = max(maxPosition, i+nums[i])
-		if i == end {
-			end = maxPosition
-			steps++
+	if len(nums) == 1 {
+		return 0
+	}
+	maxReach := 0
+	chosenPos := 0
+	tmp := 0
+	ret := 1
+	for {
+		chosenPos = tmp
+		for i := 1; i <= nums[chosenPos]; i++ {
+			pos := i + chosenPos
+			if pos >= len(nums)-1 {
+				return ret
+			}
+			if pos+nums[pos] > maxReach {
+				maxReach = pos + nums[pos]
+				tmp = pos
+			}
 		}
+		ret++
 	}
-	return steps
-}
-
-func max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
 }

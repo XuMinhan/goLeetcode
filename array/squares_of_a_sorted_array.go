@@ -1,12 +1,5 @@
 package main
 
-import "fmt"
-
-func main() {
-	squares := sortedSquares([]int{-3, -1, 0, 3, 5, 6})
-	fmt.Println(squares)
-}
-
 func sortedSquares(nums []int) []int {
 	bottom := 0
 	for i, num := range nums {
