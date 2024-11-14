@@ -1,8 +1,5 @@
 package main
 
-func main() {
-	println(monotoneIncreasingDigits(1221))
-}
 func monotoneIncreasingDigits(n int) int {
 	ints := []int{}
 	sou := n
