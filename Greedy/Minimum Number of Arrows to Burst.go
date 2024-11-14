@@ -2,16 +2,6 @@ package main
 
 import "sort"
 
-func main() {
-	i := [][]int{
-		{2, 8},
-		{1, 6},
-		{10, 12},
-		{20, 22},
-	}
-	println(findMinArrowShots(i))
-}
-
 // [[10,16],[2,8],[1,6],[7,12]]
 func findMinArrowShots(points [][]int) int {
 	sort.Slice(points, func(i, j int) bool {

@@ -23,12 +23,6 @@ func main1() {
 	fmt.Println(order)
 }
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
 func rightSideView(root *TreeNode) []int {
 	right := []int{}
 	var helper func(node *TreeNode)
