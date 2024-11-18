@@ -1,8 +1,5 @@
 package main
 
-func main() {
-	findLength([]int{1, 2, 3, 2, 1}, []int{3, 2, 1, 4, 7})
-}
 func findLength(nums1 []int, nums2 []int) int {
 	/*
 	   	输入：nums1 = [1,2,3,2,1], nums2 = [3,2,1,4,7]
