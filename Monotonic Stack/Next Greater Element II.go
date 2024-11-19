@@ -1,10 +1,7 @@
-package Monotonic_Stack
+package main
 
 import "container/list"
 
-func main() {
-	nextGreaterElements([]int{1, 2, 1})
-}
 func nextGreaterElements(nums []int) []int {
 
 	sLen := len(nums)

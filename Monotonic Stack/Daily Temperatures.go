@@ -1,4 +1,4 @@
-package Monotonic_Stack
+package main
 
 import "container/list"
 
